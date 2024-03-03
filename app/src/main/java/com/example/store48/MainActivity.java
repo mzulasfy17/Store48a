@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity  {
     int harga4 = 0;
     int jumlahmiesagu = 0;
 
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,7 +102,18 @@ public class MainActivity extends AppCompatActivity  {
 
             // Menampilkan total harga
             tvhasil.setText("Rp. " + totalHargaSetelahDiskon);
+            // Menampilkan bon dengan detail pesanan
+            String bon = "Bon Pembelian:\n";
+            bon += "Mie Sagu: " + totalHargaMieSagu + "\n";
+            bon += "Susu Kedelai: " + totalHargaSusuKedelai + "\n";
+            bon += "Sempolet: " + totalHargaSempolet + "\n";
+            bon += "Bolosagu: " + totalHargaBoluSagu + "\n";
+            bon += "membership : " + member + "\n";
+            bon += "Total: Rp. " +totalHargaSetelahDiskon;
+
+            tvhasil.setText(bon);
         });
+
 
     }
 }
